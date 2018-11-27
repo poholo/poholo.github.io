@@ -1,0 +1,27 @@
+---
+layout:     post
+title:      "Hello 2018"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2018-10-27 12:00:00
+author:     "littleplayer"
+header-img: "img/about-bg.jpg"
+catalog: true
+tags:
+    - 生活
+    - Meta
+---
+
+> “Yeah It's on. ”
+
+## 前言
+一只想找一个好点的博客系统，自从简书不当言论后，博客迁移到掘金，但掘金的体验真的很差，知乎也没心情再去搞，一只拖延到此，趁此闲暇布一个博客系统。
+此博客基于jekyll，样式来自以前慕课网的一个前辈？ [黄玄](https://huangxuan.me)，非常感谢前辈的开源。
+## 正文
+### plan
+1.此github博客将陆续将以前乱写的一些迁移过来，以后并着重几个方向探讨一下。
+2.开源一些以前的项目组件。
+3.回头细化plan
+
+—— littleplayer 2018.10
+
+
