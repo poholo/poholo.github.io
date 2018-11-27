@@ -1,0 +1,8 @@
+title: Poholo.GitHub.io
+description: 马建成的技术博客
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
