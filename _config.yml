@@ -13,7 +13,7 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     lp_927
+weibo_username:     lp927
 zhihu_username:     majiancheng
 github_username:    poholo
 twitter_username:   jefferyMa2
@@ -72,7 +72,7 @@ netease_comment: false
 
 # Google Analytics
 #ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-#ga_domain: huangxuan.me
+#ga_domain: poholo.github.io
 
 
 
