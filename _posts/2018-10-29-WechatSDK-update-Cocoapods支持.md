@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "SDWeChatSDK update Cocoapods支持"
-subtitle:   " \"SDWeChatSDK update Cocoapods支持\""
+title:      "SNWeChatSDK update Cocoapods支持"
+subtitle:   " \"SNWeChatSDK update Cocoapods支持\""
 date:       2018-10-29 10:00:00
 author:     "littleplayer"
 header-img: "img/about-bg.jpg"
@@ -12,6 +12,8 @@ tags:
     - SDK
 ---
 
+> 看文档不仔细，请用官方的
+> pod 'WechatOpenSDK'
 
 # 前言
 自从开源MCShare模块，以及维护了LDSDKManager之后，发现第三方库的管理比较混乱，此版本fork于[SNWeChatSDK](https://github.com/iosBoy/SNWeChatSDK), 目前是1.8.3。
