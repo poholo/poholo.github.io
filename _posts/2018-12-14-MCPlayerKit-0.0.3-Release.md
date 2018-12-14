@@ -39,7 +39,7 @@ tags:
 To integrate PlayerKit into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
-pod 'MCPlayerKit', '~> 0.0.2'
+pod 'MCPlayerKit'
 ```
 
 Run `pod install`
