@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "MCPlayerKit 0.04 Release"
+title:      "MCPlayerKit 0.0.5 Release"
 subtitle:   " \"易用的iOS播放器(AVPlayer&IJKPlayer)\""
 date:       2018-12-14 19:10:00
 author:     "littleplayer"
@@ -15,7 +15,7 @@ tags:
 
 
 > 0.0.3 support IJKPlayer
-
+> 0.0.5 support iOS 8
 
 # PlayerKit
 
