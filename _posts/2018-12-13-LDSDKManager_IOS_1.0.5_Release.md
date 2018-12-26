@@ -15,6 +15,8 @@ tags:
     - SDK
 ---
 
+> 1.0.6 support DingTalk & Telegram
+
 # LDSDKManager_IOS
 主要聚合QQ、微信、微博、支付宝等第三方库，抽象封装分享、授权、支付功能，以便其他开发者能快速接入。
 
