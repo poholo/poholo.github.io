@@ -66,6 +66,7 @@ Guideline 5.1.1 - Legal - Privacy - Data Collection and Storage
 app-A先提交审核，审核被拒绝原因主要是用到openUDID和IDFA
 针对此问题我先查找这两块的代码使用：
 1. openUDID是我们自身用来标记设备id使用，基于用户数量比较少，直接用uuid替了，也就忽略的uuid碰撞问题（亿级用户另寻他法）。
+
 ```text
 grep -r openudid .
 看看三方库是否有使用，无即可忽略了。
@@ -110,22 +111,20 @@ https://developer.umeng.com/docs/119267/detail/185919
 binggo 审核通过 🎉
 
 ##### 分析-app-B
-因为是同一个团队写的代码，底层框架是固定稳定的，故按照A的审核方案做了，结果-rejected-rejected（看上面B被rejected原因）,大概的意思是我用自定义的AppTracking诱导用户同意使用openUDID/IDFA等（果真，每个人的审核标准是不一样的），那好吧。看这几个库都不会主动调用AppTracking弹框请求，故自己手动写一个空的调用下，反正他们有无IDFA都能正常时使用。
+因为是同一个团队写的代码，底层框架是固定稳定的，故按照A的审核方案做了，结果-rejected-rejected（看上面B被rejected原因）,大概的意思是我用自定义的AppTracking诱导用户同意使用openUDID/IDFA等（果真，每个人的审核标准是不一样的），那好吧。看这几个库都不会主动调用AppTracking弹框请求，故自己手动写一个空的调用下，反正他们有无IDFA都能正常使用。
 ```swift
 if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { [weak self](status) in
                 if status == .authorized {
-                    self?.callBack?(true)
-                    self?.agreeUseIDFA = NSNumber(value: 1)
-                    UMengManger.configure()
+                   ...
                 } else {
-                    self?.callBack?(false)
-                    self?.agreeUseIDFA = NSNumber(value: 0)
+                   ...
                 }
             }
         }
 
 ```
+这个代码app启动的时候调用一下，主要是掉起AppTracking弹框权限请求，以达到苹果审核想要的结果。
 这样初次安装app启动后回有IDFA权限的申请，可以忽略iOS14前的设备，审核貌似只用最新版本系统审核，方法也是iOS14才有的。
 
 
@@ -134,6 +133,7 @@ binggo 审核通过 🎉
 ##### 反思
 这么多库为何都是用IDFA呢？为何不能提供一个无IDFA的呢？
 然后我去一家一家找客服谈，结果是大家都能提供无IDFA版本。
+故：另外一种方案就是剔除IDFA请求，所有三方库都不使用IDFA，这个需要你一家一家问，申请无IDFA版本的SDK。
 想一想：既然iOS14 Apple已经封杀跟踪IDFA，99%的用户也不会同意app跟踪用户，那三方库标记设备用户可以完全放弃IDFA方案，或许Apple的不允许跟踪用户可以编写到信息法中，当然斟酌细化细化。这个信息爆炸的时代，我们都是被没有任何隐私的查看分析，杀熟。就拿蛋壳/自如这些长租公寓，你有没有发现当你的数据被这些垄断企业掌握后，你再无谈判能力，如果大家的数据都被这些垄断企业收集分析，你的口袋或许一干二净，回头还得欠一屁股债。
 支持苹果，支持不被跟踪。
 
