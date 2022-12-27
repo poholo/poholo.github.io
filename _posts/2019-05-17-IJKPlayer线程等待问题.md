@@ -25,3 +25,5 @@ pod 'MCIJKPlayer'
 项目源码 [poholo:IJKPlayer](https://github.com/poholo/ijkplayer.git)
 
 
+
+
